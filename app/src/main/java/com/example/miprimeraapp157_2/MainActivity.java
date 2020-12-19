@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         TextView mTextView = findViewById(R.id.textView);
         Button button = findViewById(R.id.button);
 
-
+        // ESTO ES UN CAMBIO
 
         // el codigo fue autogenerado
         button.setOnClickListener(new View.OnClickListener() {
