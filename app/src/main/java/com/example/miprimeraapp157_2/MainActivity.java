@@ -1,41 +1,78 @@
 package com.example.miprimeraapp157_2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.layout_prueba);
+        Log.d("MainActivity", "onCreate");
 
-        EditText editText1 = findViewById(R.id.editTextNumber);
-        EditText editText2 = findViewById(R.id.editTextNumber2);
-        TextView mTextView = findViewById(R.id.textView);
-        Button button = findViewById(R.id.button);
+        // ejemplo de Toast
+        Toast.makeText(this, "Bienvenido", Toast.LENGTH_LONG).show();
 
+        Button button = findViewById(R.id.buttonPass);
 
-
-        // el codigo fue autogenerado
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String num1 = editText1.getText().toString();
-                String num2 = editText2.getText().toString();
-                int result = Integer.parseInt(num1)+ Integer.parseInt(num2) ;
-                mTextView.setText("El resultado es:  " + result);
-
+                makeIntent();
             }
         });
 
-
     }
 
+    // Intent explicito
+    private void makeIntent(){
+        Intent mIntent = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(mIntent);
+    }
+
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("MainActivity", "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("MainActivity", "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("MainActivity", "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("MainActivity", "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("MainActivity", "onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("MainActivity", "onDestroy");
+        Toast.makeText(this, "Chao", Toast.LENGTH_LONG).show();
+    }
 }

@@ -8,4 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="amarillo_patito">#EDED26</color>
+    <color name="rojo_pasion">#F11F1F</color>
+    <color name="verde_fondo">#40CF20</color>
+
+
 </resources>
